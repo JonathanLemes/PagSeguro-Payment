@@ -4,7 +4,7 @@
   "description": "API implementada em JavaScript para o ambiente de pagamento recorrente disponibilizado pelo PagSeguro",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./index.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/JonathanLemes/API-PagSeguro-JavaScript/issues"
   },
-  "homepage": "https://github.com/JonathanLemes/API-PagSeguro-JavaScript#readme"
+  "homepage": "https://github.com/JonathanLemes/API-PagSeguro-JavaScript#readme",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
 }
