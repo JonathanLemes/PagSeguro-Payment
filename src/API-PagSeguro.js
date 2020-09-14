@@ -54,8 +54,10 @@ module.exports = class api_pagseguro {
                     console.log(error);
                     reject(error);
                 }
-
+                resolve(body);
             });
         });
+
+        
     }
 }
