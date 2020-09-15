@@ -429,3 +429,7 @@ Para aderir um usuário a um plano em sua conta PagSeguro, chame a função crea
       </tr>
    </tbody>
 </table>
+
+---
+
+### Criado por: [Jonathan Fillipe Lemes](https://github.com/JonathanLemes/)
