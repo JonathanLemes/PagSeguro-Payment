@@ -243,6 +243,8 @@ API.createPlan(body).then((res) => {
 
 ## Aderir ao Plano
 Para aderir um usuário a um plano em sua conta PagSeguro, chame a função createSession() da API, para criar uma nova sessão, seguida da joinPlan(), passando como parâmetro um JSON estruturado conforme o parâmetro Body em <a href="https://dev.pagseguro.uol.com.br/reference/api-recorrencia#ades%C3%A3o-ao-plano">Adesão ao Plano da API de Recorrência</a>.
+
+### Possíveis parâmetros do Body:
 <table class="params">
    <thead>
       <tr>
