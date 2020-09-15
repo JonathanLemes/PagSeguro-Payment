@@ -317,4 +317,83 @@ module.exports = class api_pagseguro {
 
         return result;
     }
+
+    /**
+    * Listar ordens de pagamento
+    * @constructor
+    * @param {string} preApprovalCode - Código que retorna na chamada de Adesão ao plano.
+    */
+    async listPaymentOrders(preApprovalCode) {
+        const options = {
+            method: "GET",
+            url: `${this.preapprovals}/${preApprovalCode}/payment-orders?email=${this.email}&token=${this.token}`,
+            headers: {"Content-Type": this.json_endpoint, "Accept": this.accept_json},
+            json: true
+        };
+
+        let result = await new Promise(function (resolve, reject) {
+            request(options, function(error, response, body) {
+                if (error) {
+                    console.log(error);
+                    reject(error);
+                }
+                resolve(body);
+            });
+        });
+
+        return result;
+    }
+
+    /**
+    * Consulta pelo Código da Adesão
+    * @constructor
+    * @param {string} preApprovalCode - Código que retorna na chamada de Adesão ao plano.
+    */
+    async adherenceCodeConsult(preApprovalCode) {
+        const options = {
+            method: "GET",
+            url: `${this.preapprovals}/${preApprovalCode}?email=${this.email}&token=${this.token}`,
+            headers: {"Content-Type": this.json_endpoint, "Accept": this.accept_json},
+            json: true
+        };
+
+        let result = await new Promise(function (resolve, reject) {
+            request(options, function(error, response, body) {
+                if (error) {
+                    console.log(error);
+                    reject(error);
+                }
+                resolve(body);
+            });
+        });
+
+        return result;
+    }
+
+    /**
+    * Consulta por intervalo de datas
+    * @constructor
+    * @param {string} initialDate - Data inicial.
+    * @param {string} finalDate - Data final.
+    */
+    async dateIntervalConsult(initialDate, finalDate) {
+        const options = {
+            method: "GET",
+            url: `${this.preapprovals}/?email=${this.email}&token=${this.token}&initialDate=${initialDate}&finalDate=${finalDate}`,
+            headers: {"Content-Type": this.json_endpoint, "Accept": this.accept_json},
+            json: true
+        };
+
+        let result = await new Promise(function (resolve, reject) {
+            request(options, function(error, response, body) {
+                if (error) {
+                    console.log(error);
+                    reject(error);
+                }
+                resolve(body);
+            });
+        });
+
+        return result;
+    }
 }
