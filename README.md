@@ -1,4 +1,4 @@
-# API-PagSeguro-JavaScript
+# API PagSeguro-Payment (JavaScript)
 <p align="left">
   <a href="https://www.javascript.com/"><img src="https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/languages/js.svg" alt="javascript" style="vertical-align:top; margin:4px"></a>
   <a href="https://nodejs.org/en/download/"><img src="https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/frameworks/nodejs.svg" alt="noddejs" style="vertical-align:top; margin:4px"></a>
