@@ -1,7 +1,7 @@
 # Providers - Gerar Boleto
 
 ## Gerar boleto
-Para um ou mais boletos em sua conta PagSeguro, chame a função **recurringPayment(body)** da API, passando como parâmetro o body conforme em <a href="https://dev.pagseguro.uol.com.br/reference/api-boleto#api-boleto-providers-gerar-boleto">Providers - Gerar Boleto da API de Recorrência</a>.
+Para um ou mais boletos em sua conta PagSeguro, chame a função **recurringPayment(body)** da API, passando como parâmetro o body conforme em <a href="https://dev.pagseguro.uol.com.br/reference/api-boleto#api-boleto-providers-gerar-boleto">Providers - Gerar Boleto da API de Boletos</a>.
 
 ### Parâmetros
 <table class="params">

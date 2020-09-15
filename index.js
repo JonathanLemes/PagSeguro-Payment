@@ -12,6 +12,7 @@ module.exports = class api_pagseguro {
     * @param {string} preapprovals_request - URL de criação do plano.
     * @param {string} preapprovals_payment - URL de cobrança do plano.
     * @param {string} recurring_payment - URL para criação de boletos.
+    * @param {string} transactions - URL para o checkout transparente.
     * @param {string} session - URL para iniciar sessão para aderir um plano.
     * @param {string} sessionId - ID gerada pela session na função createSession().
     */
@@ -23,6 +24,7 @@ module.exports = class api_pagseguro {
         this.preapprovals_request = credentials.preapprovals_request;
         this.preapprovals_payment = credentials.preapprovals_payment;
         this.recurring_payment = credentials.recurring_payment;
+        this.transactions = credentials.transactions;
         this.session = credentials.session;
         this.url_endpoint = "application/x-www-form-urlencoded;charset=ISO-8859-1";
         this.json_endpoint = "application/json;charset=UTF-8";
@@ -400,7 +402,7 @@ module.exports = class api_pagseguro {
     }
 
     /**
-    * Consulta por intervalo de datas
+    * Gerar boleto
     * @constructor
     * @param {string} body - JSON estruturado com os parâmetros do body em https://dev.pagseguro.uol.com.br/reference/api-recorrencia#api-boleto-providers-gerar-boleto
     */
@@ -420,6 +422,94 @@ module.exports = class api_pagseguro {
                     reject(error);
                 }
                 resolve(body);
+            });
+        });
+
+        return result;
+    }
+
+    /**
+    * Checkout Transparente
+    * @constructor
+    * @param {string} body - JSON estruturado com os parâmetros do body em https://dev.pagseguro.uol.com.br/reference/checkout-transparente (varia pelo método de pagamento)
+    */
+    async transparentCheckout(body) {
+        const options = {
+            method: "POST",
+            url: `${this.transactions}/?email=${this.email}&token=${this.token}`,
+            headers: {"Content-Type": this.xml_endpoint},
+            body: body,
+            json: true
+        };
+
+        let result = await new Promise(function (resolve, reject) {
+            request(options, function(error, response, body) {
+                if (error) {
+                    console.log(error);
+                    reject(error);
+                }
+                parseString(body, function (err, result) {
+					resolve(result);
+				});
+            });
+        });
+
+        return result;
+    }
+
+    /**
+    * Cancelar transação
+    * @constructor
+    * @param {string} transactionCode - Código da transação. Transação deverá estar com os status "Aguardando pagamento" ou "Em análise". Formato: Uma sequência de 36 caracteres, com os hífens, ou 32 caracteres, sem os hífens.
+    */
+    async transparentCheckoutCancel(transactionCode) {
+        const options = {
+            method: "POST",
+            url: `${this.transactions}/cancels?email=${this.email}&token=${this.token}`,
+            headers: {"Content-Type": this.url_endpoint},
+            body: {transactionCode: transactionCode},
+            json: true
+        };
+
+        let result = await new Promise(function (resolve, reject) {
+            request(options, function(error, response, body) {
+                if (error) {
+                    console.log(error);
+                    reject(error);
+                }
+                parseString(body, function (err, result) {
+					resolve(result);
+				});
+            });
+        });
+
+        return result;
+    }
+
+    /**
+    * Estornar transação
+    * @constructor
+    * @param {string} transactionCode - Código da transação. Transação deverá estar com os status "Paga", "Disponível" ou "Em disputa". Formato: Uma sequência de 36 caracteres, com os hífens, ou 32 caracteres, sem os hífens.
+    * @param {string} refundValue - Valor do estorno. Utilizado no estorno de uma transação, corresponde ao valor a ser devolvido. Se não for informado, o PagSeguro assume que o valor a ser estornado é o valor total da transação. Formato: Decimal, com duas casas decimais separadas por ponto (p.e., 1234.56), maior que 0.00 e menor ou igual ao valor da transação.
+    */
+    async transparentCheckoutRefund(transactionCode, refundValue) {
+        const options = {
+            method: "POST",
+            url: `${this.transactions}/refunds?email=${this.email}&token=${this.token}`,
+            headers: {"Content-Type": this.url_endpoint},
+            body: {transactionCode: transactionCode, refundValue: refundValue},
+            json: true
+        };
+
+        let result = await new Promise(function (resolve, reject) {
+            request(options, function(error, response, body) {
+                if (error) {
+                    console.log(error);
+                    reject(error);
+                }
+                parseString(body, function (err, result) {
+					resolve(result);
+				});
             });
         });
 

@@ -19,6 +19,9 @@ API implementada em JavaScript para o ambiente de pagamento recorrente disponibi
     4. <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/docs/Pagamento%20Recorrente/Providers%20-%20Consulta.md">Providers - Consulta</a>
 2. **Boleto**
    1. <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/docs/Boleto/Providers%20-%20Gerar%20Boleto.md">Providers - Gerar Boleto</a> 
+3. **Checkout Transparente**
+   1. <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/docs/Checkout%20Transparente/Providers.md">Primeiros passos</a>
+   2. <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/docs/Checkout%20Transparente/Processando%20o%20Checkout.md">Processando o Checkout</a>
 
 ---
 
