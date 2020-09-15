@@ -136,4 +136,31 @@ module.exports = class api_pagseguro {
 
         return result;
     }
+
+    /**
+    * Retentativa de pagamento
+    * @constructor
+    * @param {JSON} preApprovalCode - Código que retorna na chamada de Adesão ao Plano.
+    * @param {JSON} paymentOrderCode - Código que retorna na chamada de Criação de plano.
+    */
+   async paymentRetry(preApprovalCode, paymentOrderCode) {
+    const options = {
+        method: "POST",
+        url: `${this.preapprovals}/${preApprovalCode}/payment-orders/${paymentOrderCode}/payment?email=${this.email}&token=${this.token}`,
+        headers: {"Content-Type": this.json_endpoint, "Accept": this.accept_json},
+        json: true
+    };
+
+    let result = await new Promise(function (resolve, reject) {
+        request(options, function(error, response, body) {
+            if (error) {
+                console.log(error);
+                reject(error);
+            }
+            resolve(body);
+        });
+    });
+
+    return result;
+}
 }
