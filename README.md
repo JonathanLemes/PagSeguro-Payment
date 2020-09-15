@@ -1,9 +1,7 @@
 # API PagSeguro-Payment (JavaScript)
-<p align="left">
-  <a href="https://www.javascript.com/"><img src="https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/languages/js.svg" alt="javascript" style="vertical-align:top; margin:4px"></a>
-  <a href="https://nodejs.org/en/download/"><img src="https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/frameworks/nodejs.svg" alt="noddejs" style="vertical-align:top; margin:4px"></a>
-  <a href="https://www.npmjs.com/"><img src="https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/services/npm.svg" alt="npm" style="vertical-align:top; margin:4px"></a>
-</p>
+![JavaScript](https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/languages/js.svg)
+![NodeJS](https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/frameworks/nodejs.svg)
+![NPM](https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/services/npm.svg)
 
 ## Descrição
 
@@ -24,20 +22,15 @@ API implementada em JavaScript para o ambiente de pagamento recorrente disponibi
 
 ---
 
-# Exemplo
-
-Um exemplo básico de execução da API está no arquivo <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/index.js">index.js</a>. Para executá-lo, basta executar os seguintes comandos no terminal:
-```bash
-npm install
-```
-```bash
-npm test
-```
-
 # Importações
 Importe os arquivos <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/src/API-PagSeguro.js">src/API-PagSeguro.js</a> e <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/credentials.json">credentials.json</a> para seu código JavaScript.
+
+```bash
+npm install pagseguro-payment
+```
+
 ```javascript
-const api = require("./src/API-PagSeguro");
+const api = require("pagseguro-payment");
 const credentials = require("./credentials.json");
 ```
 
@@ -53,5 +46,15 @@ Altere o arquivo <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScr
 >Caso você não saiba gerar um token, basta seguir o tutorial no link: https://www.youtube.com/watch?v=Taaa0H6j5Ug
 
 ---
+
+# Exemplo
+
+Um exemplo básico de execução da API está no arquivo <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/src/test.js">src/test.js</a>. Para executá-lo, basta clonar o repositório e executar os seguintes comandos no terminal:
+```bash
+npm install
+```
+```bash
+npm test
+```
 
 ### Criado por: [Jonathan Fillipe Lemes](https://github.com/JonathanLemes/)
