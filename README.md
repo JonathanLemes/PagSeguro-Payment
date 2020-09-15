@@ -39,6 +39,8 @@ Altere o arquivo <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScr
 >**Nota:** As URLs do arquivo estão para o ambiente real, que pode ser alterado para o ambiente de testes (sandbox) inserindo ".sandbox" após o "ws" de todas as URLs.
 >Caso você não saiba gerar um token, basta seguir o tutorial no link: https://www.youtube.com/watch?v=Taaa0H6j5Ug
 
+---
+
 ## Criar Plano
 Para criar um novo plano em sua conta PagSeguro, chame a função createPlan() da API, passando como parâmetro um JSON estruturado conforme o parâmetro Body em <a href="https://dev.pagseguro.uol.com.br/reference/api-recorrencia#criar-plano">Criar Plano da API de Recorrência</a>.
 ```javascript
@@ -241,6 +243,8 @@ API.createPlan(body).then((res) => {
    </tbody>
 </table>
 
+---
+
 ## Aderir ao Plano
 Para aderir um usuário a um plano em sua conta PagSeguro, chame a função createSession() da API, para criar uma nova sessão, seguida da joinPlan(), passando como parâmetro um JSON estruturado conforme o parâmetro Body em <a href="https://dev.pagseguro.uol.com.br/reference/api-recorrencia#ades%C3%A3o-ao-plano">Adesão ao Plano da API de Recorrência</a>.
 
@@ -428,6 +432,94 @@ Para aderir um usuário a um plano em sua conta PagSeguro, chame a função crea
             <span class="param-type">object</span>
          </td>
          <td class="description last">Endereço de Cobrança.</td>
+      </tr>
+   </tbody>
+</table>
+
+---
+
+## Cobrar Plano
+Para cobrar um plano em sua conta PagSeguro, chame a função chargePlan() da API, passando como parâmetro um JSON estruturado conforme o parâmetro Body em <a href="https://dev.pagseguro.uol.com.br/reference/api-recorrencia#cobrar-plano">Cobrar Plano da API de Recorrência</a>.
+
+### Possíveis parâmetros do Body:
+<table class="params">
+   <thead>
+      <tr>
+         <th>Variável</th>
+         <th>Tipo</th>
+         <th class="last">Descrição</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td class="name"><code>preApprovalCode*</code></td>
+         <td class="type">
+            <span class="param-type">string</span>
+         </td>
+         <td class="description last">Código da recorrência obtido no método /pre-approvals em joinPlan().</td>
+      </tr>
+      <tr>
+         <td class="name"><code>reference</code></td>
+         <td class="type">
+            <span class="param-type">string</span>
+         </td>
+         <td class="description last">Código/Identificador para fazer referência à recorrência em seu sistema.</td>
+      </tr>
+     <tr>
+         <td class="name"><code>senderHash</code></td>
+         <td class="type">
+            <span class="param-type">string</span>
+         </td>
+         <td class="description last">Identificador (fingerprint) gerado pelo vendedor por meio do JavaScript do PagSeguro. Obrigatório se senderIp for nulo. Formato: Obtido a partir do método Javascript PagseguroDirectPayment.getSenderHash().</td>
+      </tr>
+     <tr>
+         <td class="name"><code>senderIp</code></td>
+         <td class="type">
+            <span class="param-type">string</span>
+         </td>
+         <td class="description last">Endereço de IP de origem da assinatura, relacionado ao assinante. Obrigatório se hash for nulo. Formato: 4 números, de 0 a 255, separados por ponto.</td>
+      </tr>
+     <tr>
+         <td class="name"><code>items.id*</code></td>
+         <td class="type">
+            <span class="param-type">string</span>
+         </td>
+         <td class="description last">Id do produto objeto da recorrência.</td>
+      </tr>
+     <tr>
+         <td class="name"><code>items.description*</code></td>
+         <td class="type">
+            <span class="param-type">string</span>
+         </td>
+         <td class="description last">Descrição do produto objeto da recorrência.</td>
+      </tr>
+     <tr>
+         <td class="name"><code>items.quantity*</code></td>
+         <td class="type">
+            <span class="param-type">string</span>
+         </td>
+         <td class="description last">Quantidade do produto.</td>
+      </tr>
+     <tr>
+         <td class="name"><code>items.amount*</code></td>
+         <td class="type">
+            <span class="param-type">string</span>
+         </td>
+         <td class="description last">Valor cobrado. Formato: Decimal, com duas casas decimais separadas por ponto (p.e, 1234.56).</td>
+      </tr>
+     <tr>
+         <td class="name"><code>items.weight</code></td>
+         <td class="type">
+            <span class="param-type">string</span>
+         </td>
+         <td class="description last">Peso do produto. Formato: Decimal, com duas casas decimais separadas por ponto (p.e, 1234.56).</td>
+      </tr>
+     <tr>
+         <td class="name"><code>items.shippingCost</code></td>
+         <td class="type">
+            <span class="param-type">string</span>
+         </td>
+         <td class="description last">Valor do frete. Formato: Decimal, com duas casas decimais separadas por ponto (p.e, 1234.56).</td>
       </tr>
    </tbody>
 </table>
