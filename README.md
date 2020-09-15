@@ -17,19 +17,15 @@ Um exemplo básico de execução da API está no arquivo <a href="https://github
 
 ## Importações
 Importe os arquivos <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/src/API-PagSeguro.js">src/API-PagSeguro.js</a> e <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/credentials.json">credentials.json</a> para seu código JavaScript.
-```html
-<script>
+```javascript
 const api = require("./src/API-PagSeguro");
 const credentials = require("./credentials.json");
-</script>
 ```
 
 ## Método construtor
 O método construtor da API requer a passagem de um parâmetro JSON conforme o <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/credentials.json">credentials.json</a>.
-```html
-<script>
+```javascript
 const API = new api(credentials);
-</script>
 ```
 ### Credenciais
 
@@ -39,8 +35,7 @@ Altere o arquivo <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScr
 
 ## Criar Plano
 Para criar um novo plano em sua conta PagSeguro, chame a função createPlan() da API, passando como parâmetro um JSON estruturado conforme o parâmetro Body em <a href="https://dev.pagseguro.uol.com.br/reference/api-recorrencia#criar-plano">Criar Plano da API de Recorrência</a>.
-```html
-<script>
+```javascript
 var body = {
     reference: "1", 
     preApproval: {
@@ -57,7 +52,6 @@ var body = {
 API.createPlan(body).then((res) => {
     console.log(res);
 });
-</script>
 ```
 
 ### Possíveis parâmetros do Body:
