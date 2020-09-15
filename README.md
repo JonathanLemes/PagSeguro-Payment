@@ -1,4 +1,4 @@
-# API PagSeguro-Payment (JavaScript)
+# Biblioteca (lib) NPM PagSeguro-Payment
 ![JavaScript](https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/languages/js.svg)
 ![NodeJS](https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/frameworks/nodejs.svg)
 ![NPM](https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/services/npm.svg)
