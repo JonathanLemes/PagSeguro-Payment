@@ -1,6 +1,6 @@
 {
   "name": "pagseguro-payment",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "API implementada em JavaScript para o ambiente de pagamento recorrente disponibilizado pelo PagSeguro",
   "main": "index.js",
   "scripts": {
