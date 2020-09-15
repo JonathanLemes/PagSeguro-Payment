@@ -109,5 +109,30 @@ module.exports = class api_pagseguro {
         return result;
     }
 
-    
+    /*
+    * Cobrança do plano.
+    * @constructor
+    * @param {JSON} body - JSON estruturado com os parâmetros do body em https://dev.pagseguro.uol.com.br/reference/api-recorrencia#cobrar-plano
+    */
+    async chargePlan(body) {
+        const options = {
+            method: "POST",
+            url: `${this.preapprovals_payment}/?email=${this.email}&token=${this.token}`,
+            headers: {"Content-Type": this.json_endpoint, "Accept": this.accept_json},
+            body: body,
+            json: true
+        };
+
+        let result = await new Promise(function (resolve, reject) {
+            request(options, function(error, response, body) {
+                if (error) {
+                    console.log(error);
+                    reject(error);
+                }
+                resolve(body);
+            });
+        });
+
+        return result;
+    }
 }
