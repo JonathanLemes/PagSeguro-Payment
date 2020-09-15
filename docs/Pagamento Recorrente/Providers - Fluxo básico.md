@@ -257,7 +257,7 @@ Para aderir um usuário a um plano em sua conta PagSeguro, chame a função **cr
          <td class="type">
             <span class="param-type">string</span>
          </td>
-         <td class="description last">Identificador (fingerprint) gerado pelo vendedor por meio do JavaScript do PagSeguro. Obrigatório se ip for nulo. Formato: Obtido a partir do método Javascript PagseguroDirectPayment.getSenderHash().</td>
+         <td class="description last">Identificador (fingerprint) gerado pelo vendedor por meio do JavaScript do PagSeguro. Obrigatório se ip for nulo. Formato: Obtido a partir do método Javascript <a href="https://dev.pagseguro.uol.com.br/reference/checkout-transparente#transparente-biblioteca-javascript">PagseguroDirectPayment.getSenderHash()</a>.</td>
       </tr>
      <tr>
          <td class="name"><code>sender.phone.areaCode*</code></td>
@@ -355,7 +355,7 @@ Para aderir um usuário a um plano em sua conta PagSeguro, chame a função **cr
          <td class="type">
             <span class="param-type">string</span>
          </td>
-         <td class="description last">Token retornado no método Javascript PagSeguroDirectPayment.createCardToken().</td>
+         <td class="description last">Token retornado no método Javascript <a href="https://dev.pagseguro.uol.com.br/reference/checkout-transparente#transparente-biblioteca-javascript">PagSeguroDirectPayment.createCardToken()</a>.</td>
       </tr>
      <tr>
          <td class="name"><code>paymentMethod.creditCard.holder.name*</code></td>
@@ -429,7 +429,7 @@ Para cobrar um plano em sua conta PagSeguro, chame a função **chargePlan(body)
          <td class="type">
             <span class="param-type">string</span>
          </td>
-         <td class="description last">Identificador (fingerprint) gerado pelo vendedor por meio do JavaScript do PagSeguro. Obrigatório se senderIp for nulo. Formato: Obtido a partir do método Javascript PagseguroDirectPayment.getSenderHash().</td>
+         <td class="description last">Identificador (fingerprint) gerado pelo vendedor por meio do JavaScript do PagSeguro. Obrigatório se senderIp for nulo. Formato: Obtido a partir do método Javascript <a href="https://dev.pagseguro.uol.com.br/reference/checkout-transparente#transparente-biblioteca-javascript">PagseguroDirectPayment.getSenderHash()</a>.</td>
       </tr>
      <tr>
          <td class="name"><code>senderIp</code></td>
