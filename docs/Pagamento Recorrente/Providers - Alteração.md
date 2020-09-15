@@ -117,14 +117,14 @@ Para alterar o meio de pagamento em sua conta PagSeguro, chame a função **chan
          <td class="type">
             <span class="param-type">string</span>
          </td>
-         <td class="description last">Identificador (fingerprint) gerado pelo vendedor por meio do JavaScript do PagSeguro. Obrigatório se ip for nulo. Formato: Obtido a partir do método Javascript PagseguroDirectPayment.getSenderHash()</td>
+         <td class="description last">Identificador (fingerprint) gerado pelo vendedor por meio do JavaScript do PagSeguro. Obrigatório se ip for nulo. Formato: Obtido a partir do método Javascript <a href="https://dev.pagseguro.uol.com.br/reference/checkout-transparente#transparente-biblioteca-javascript">PagseguroDirectPayment.getSenderHash()</a></td>
       </tr>
       <tr>
          <td class="name"><code>body.creditCard.token*</code></td>
          <td class="type">
             <span class="param-type">string</span>
          </td>
-         <td class="description last">Token retornado no método Javascript PagSeguroDirectPayment.createCardToken().</td>
+         <td class="description last">Token retornado no método Javascript <a href="https://dev.pagseguro.uol.com.br/reference/checkout-transparente#transparente-biblioteca-javascript">PagSeguroDirectPayment.createCardToken()</a>.</td>
       </tr>
       <tr>
          <td class="name"><code>body.creditCard.holder.name*</code></td>
