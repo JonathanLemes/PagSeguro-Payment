@@ -17,6 +17,7 @@ API implementada em JavaScript para o ambiente de pagamento recorrente disponibi
 1. Pagamento Recorrência
     1. <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/docs/Pagamento%20Recorrente/Providers%20-%20Fluxo%20b%C3%A1sico.md">Providers - Fluxo básico</a>
     2. <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/docs/Pagamento%20Recorrente/Providers%20-%20Cancelamento.md">Providers - Cancelamento</a>
+    3. <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/docs/Pagamento%20Recorrente/Providers%20-%20Altera%C3%A7%C3%A3o.md">Providers - Alteração</a>
 
 ---
 
