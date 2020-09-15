@@ -1,14 +1,14 @@
 {
-  "name": "api-pagseguro-javascript",
+  "name": "pagseguro-payment",
   "version": "1.0.0",
   "description": "API implementada em JavaScript para o ambiente de pagamento recorrente disponibilizado pelo PagSeguro",
   "main": "index.js",
   "scripts": {
-    "test": "node ./index.js"
+    "test": "node ./test.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JonathanLemes/API-PagSeguro-JavaScript.git"
+    "url": "git+https://github.com/JonathanLemes/PagSeguro-Payment.git"
   },
   "keywords": [
     "PagSeguro",
@@ -16,14 +16,16 @@
     "JavaScript",
     "Pagamento",
     "Recorrente",
-    "SandBox"
+    "SandBox",
+    "Boleto",
+    "Payment"
   ],
   "author": "JonathanLemes",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JonathanLemes/API-PagSeguro-JavaScript/issues"
+    "url": "https://github.com/JonathanLemes/PagSeguro-Payment/issues"
   },
-  "homepage": "https://github.com/JonathanLemes/API-PagSeguro-JavaScript#readme",
+  "homepage": "https://github.com/JonathanLemes/PagSeguro-Payment#readme",
   "dependencies": {
     "request": "^2.88.2",
     "xml2js": "^0.4.23"
