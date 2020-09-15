@@ -140,27 +140,85 @@ module.exports = class api_pagseguro {
     /**
     * Retentativa de pagamento
     * @constructor
-    * @param {JSON} preApprovalCode - Código que retorna na chamada de Adesão ao Plano.
-    * @param {JSON} paymentOrderCode - Código que retorna na chamada de Criação de plano.
+    * @param {string} preApprovalCode - Código que retorna na chamada de Adesão ao Plano.
+    * @param {string} paymentOrderCode - Código que retorna na chamada de Criação de plano.
     */
-   async paymentRetry(preApprovalCode, paymentOrderCode) {
-    const options = {
-        method: "POST",
-        url: `${this.preapprovals}/${preApprovalCode}/payment-orders/${paymentOrderCode}/payment?email=${this.email}&token=${this.token}`,
-        headers: {"Content-Type": this.json_endpoint, "Accept": this.accept_json},
-        json: true
-    };
+    async paymentRetry(preApprovalCode, paymentOrderCode) {
+        const options = {
+            method: "POST",
+            url: `${this.preapprovals}/${preApprovalCode}/payment-orders/${paymentOrderCode}/payment?email=${this.email}&token=${this.token}`,
+            headers: {"Content-Type": this.json_endpoint, "Accept": this.accept_json},
+            json: true
+        };
 
-    let result = await new Promise(function (resolve, reject) {
-        request(options, function(error, response, body) {
-            if (error) {
-                console.log(error);
-                reject(error);
-            }
-            resolve(body);
+        let result = await new Promise(function (resolve, reject) {
+            request(options, function(error, response, body) {
+                if (error) {
+                    console.log(error);
+                    reject(error);
+                }
+                resolve(body);
+            });
         });
-    });
 
-    return result;
-}
+        return result;
+    }
+
+    /**
+    * Suspensão e Reativação
+    * @constructor
+    * @param {string} preApproval - Código de pre-approvals que retorna na Adesão do Plano.
+    * @param {string} status - Novo status da assinatura.
+    */
+    async suspendReactivate(preApproval, status) {
+        const body = {
+            status: status
+        }
+
+        const options = {
+            method: "PUT",
+            url: `${this.preapprovals}/${preApproval}/status?token=${this.token}&email=${this.email}`,
+            headers: {"Content-Type": this.json_endpoint, "Accept": this.accept_json},
+            body: body,
+            json: true
+        };
+
+        let result = await new Promise(function (resolve, reject) {
+            request(options, function(error, response, body) {
+                if (error) {
+                    console.log(error);
+                    reject(error);
+                }
+                resolve(body);
+            });
+        });
+
+        return result;
+    }
+
+    /**
+    * Cancelamento de adesão
+    * @constructor
+    * @param {string} preApproval - Código de pre-approvals que retorna na Adesão do Plano.
+    */
+    async cancelAdherence(preApproval) {
+        const options = {
+            method: "PUT",
+            url: `${this.preapprovals}/${preApproval}/cancel?email=${this.email}&token=${this.token}`,
+            headers: {"Content-Type": this.json_endpoint, "Accept": this.accept_json},
+            json: true
+        };
+
+        let result = await new Promise(function (resolve, reject) {
+            request(options, function(error, response, body) {
+                if (error) {
+                    console.log(error);
+                    reject(error);
+                }
+                resolve(body);
+            });
+        });
+
+        return result;
+    }
 }

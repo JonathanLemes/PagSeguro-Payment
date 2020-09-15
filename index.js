@@ -19,7 +19,3 @@ var body = {
 API.createPlan(body).then((res) => {
     console.log(res);
 });
-
-API.createSession().then((res) => {
-    console.log(res);
-});
