@@ -11,6 +11,7 @@ module.exports = class api_pagseguro {
     * @param {string} preapprovals - URL de adesão do plano.
     * @param {string} preapprovals_request - URL de criação do plano.
     * @param {string} preapprovals_payment - URL de cobrança do plano.
+    * @param {string} recurring_payment - URL para criação de boletos.
     * @param {string} session - URL para iniciar sessão para aderir um plano.
     * @param {string} sessionId - ID gerada pela session na função createSession().
     */
@@ -21,6 +22,7 @@ module.exports = class api_pagseguro {
         this.preapprovals = credentials.preapprovals;
         this.preapprovals_request = credentials.preapprovals_request;
         this.preapprovals_payment = credentials.preapprovals_payment;
+        this.recurring_payment = credentials.recurring_payment;
         this.session = credentials.session;
         this.url_endpoint = "application/x-www-form-urlencoded;charset=ISO-8859-1";
         this.json_endpoint = "application/json;charset=UTF-8";
@@ -381,6 +383,33 @@ module.exports = class api_pagseguro {
             method: "GET",
             url: `${this.preapprovals}/?email=${this.email}&token=${this.token}&initialDate=${initialDate}&finalDate=${finalDate}`,
             headers: {"Content-Type": this.json_endpoint, "Accept": this.accept_json},
+            json: true
+        };
+
+        let result = await new Promise(function (resolve, reject) {
+            request(options, function(error, response, body) {
+                if (error) {
+                    console.log(error);
+                    reject(error);
+                }
+                resolve(body);
+            });
+        });
+
+        return result;
+    }
+
+    /**
+    * Consulta por intervalo de datas
+    * @constructor
+    * @param {string} body - JSON estruturado com os parâmetros do body em https://dev.pagseguro.uol.com.br/reference/api-recorrencia#api-boleto-providers-gerar-boleto
+    */
+    async recurringPayment(body) {
+        const options = {
+            method: "POST",
+            url: `${this.recurring_payment}/boletos?email=${this.email}&token=${this.token}`,
+            headers: {"Content-Type": this.json_endpoint, "Accept": this.accept_json},
+            body: body,
             json: true
         };
 
