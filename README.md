@@ -8,6 +8,7 @@
 ## Descrição
 
 API implementada em JavaScript para o ambiente de pagamento recorrente disponibilizado pelo PagSeguro. Através das funções do arquivo <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/src/API-PagSeguro.js">src/API-PagSeguro.js</a> as requisições HTTP da <a href="https://dev.pagseguro.uol.com.br/reference/api-recorrencia">API Pagamento Recorrência</a> do PagSeguro são executadas.
+>**Nota:** Seu projeto em Node JS deve possuir instaladas as bibliotecas <a href="https://www.npmjs.com/package/request">request</a> e <a href="https://www.npmjs.com/package/xml2js">xml2js</a> para o pleno funcionamento da API.
 
 ---
 

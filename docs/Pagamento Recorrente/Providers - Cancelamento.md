@@ -14,14 +14,14 @@ Para alterar o status da adesão a um plano em sua conta PagSeguro, chame a fun�
    </thead>
    <tbody>
       <tr>
-         <td class="name"><code>preApproval</code></td>
+         <td class="name"><code>preApproval*</code></td>
          <td class="type">
             <span class="param-type">string</span>
          </td>
          <td class="description last">Código de pre-approvals que retorna na Adesão do Plano</td>
       </tr>
       <tr>
-         <td class="name"><code>status</code></td>
+         <td class="name"><code>status*</code></td>
          <td class="type">
             <span class="param-type">string</span>
          </td>
@@ -46,7 +46,7 @@ Para cancelar a adesão a um plano em sua conta PagSeguro, chame a função **ca
    </thead>
    <tbody>
       <tr>
-         <td class="name"><code>preApproval</code></td>
+         <td class="name"><code>preApproval*</code></td>
          <td class="type">
             <span class="param-type">string</span>
          </td>

@@ -221,4 +221,100 @@ module.exports = class api_pagseguro {
 
         return result;
     }
+
+    /**
+    * Edição de Valor e Planos
+    * @constructor
+    * @param {string} preApprovalRequestCode - Código que retorna na chamada de Criação de plano
+    * @param {string} amountPerPayment - Novo valor para cobrança do plano e para as adesões do plano.
+    * @param {boolean} updateSubscriptions - Flag para indicar se a alteração de valor deve afetar as adesões vigentes do plano.
+    */
+    async editPlanValues(preApprovalRequestCode, amountPerPayment, updateSubscriptions) {
+        const body = {
+            amountPerPayment: amountPerPayment,
+            updateSubscriptions: updateSubscriptions
+        };
+
+        const options = {
+            method: "PUT",
+            url: `${this.preapprovals_request}/${preApprovalRequestCode}/payment?email=${this.email}&token=${this.token}`,
+            headers: {"Content-Type": this.json_endpoint, "Accept": this.accept_json},
+            body: body,
+            json: true
+        };
+
+        let result = await new Promise(function (resolve, reject) {
+            request(options, function(error, response, body) {
+                if (error) {
+                    console.log(error);
+                    reject(error);
+                }
+                resolve(body);
+            });
+        });
+
+        return result;
+    }
+
+    /**
+    * Edição de Valor e Planos
+    * @constructor
+    * @param {string} preApprovalCode - Código que retorna na chamada de Adesão ao plano.
+    * @param {string} type - Tipo do desconto a ser aplicado
+    * @param {boolean} value - Valor do desconto a ser aplicado, de acordo com o tipo. Formato: Decimal, com duas casas decimais separadas por ponto, maior que 0.00 e deve ser compatível com o valor a ser descontado. Por exemplo: não é possível aplicar um desconto fixo de 11.00 para uma cobrança de 10.00, tal como não é possível informar uma porcentagem acima de 100.00.
+    */
+    async paymentDiscount(preApprovalCode, type, value) {
+        const body = {
+            type: type,
+            value: value
+        };
+
+        const options = {
+            method: "PUT",
+            url: `${this.auth}/${preApprovalCode}/discount?email=${this.email}&token=${this.token}`,
+            headers: {"Content-Type": this.json_endpoint, "Accept": this.accept_json},
+            body: body,
+            json: true
+        };
+
+        let result = await new Promise(function (resolve, reject) {
+            request(options, function(error, response, body) {
+                if (error) {
+                    console.log(error);
+                    reject(error);
+                }
+                resolve(body);
+            });
+        });
+
+        return result;
+    }
+
+    /**
+    * Mudança de meio de pagamento
+    * @constructor
+    * @param {string} preApprovalCode - Código que retorna na chamada de Adesão ao plano.
+    * @param {string} body - JSON estruturado com os parâmetros do body em https://dev.pagseguro.uol.com.br/reference/api-recorrencia#mudan%C3%A7a-de-meio-de-pagamento
+    */
+    async changePaymentMethod(preApprovalCode, body) {
+        const options = {
+            method: "PUT",
+            url: `${this.preapprovals}/${preApprovalCode}/payment-method?email=${this.email}&token=${this.token}`,
+            headers: {"Content-Type": this.json_endpoint, "Accept": this.accept_json},
+            body: body,
+            json: true
+        };
+
+        let result = await new Promise(function (resolve, reject) {
+            request(options, function(error, response, body) {
+                if (error) {
+                    console.log(error);
+                    reject(error);
+                }
+                resolve(body);
+            });
+        });
+
+        return result;
+    }
 }
