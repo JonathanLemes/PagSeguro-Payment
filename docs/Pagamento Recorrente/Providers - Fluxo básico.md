@@ -1,7 +1,7 @@
 # Providers - Fluxo básico
 
 ## Criar Plano
-Para criar um novo plano em sua conta PagSeguro, chame a função createPlan(body) da API, passando como parâmetro um JSON estruturado conforme o parâmetro Body em <a href="https://dev.pagseguro.uol.com.br/reference/api-recorrencia#criar-plano">Criar Plano da API de Recorrência</a>.
+Para criar um novo plano em sua conta PagSeguro, chame a função **createPlan(body)** da API, passando como parâmetro um JSON estruturado conforme o parâmetro Body em <a href="https://dev.pagseguro.uol.com.br/reference/api-recorrencia#criar-plano">Criar Plano da API de Recorrência</a>.
 ```javascript
 var body = {
     reference: "1", 
@@ -205,7 +205,7 @@ API.createPlan(body).then((res) => {
 ---
 
 ## Aderir ao Plano
-Para aderir um usuário a um plano em sua conta PagSeguro, chame a função createSession() da API, para criar uma nova sessão, seguida da joinPlan(body), passando como parâmetro um JSON estruturado conforme o parâmetro Body em <a href="https://dev.pagseguro.uol.com.br/reference/api-recorrencia#ades%C3%A3o-ao-plano">Adesão ao Plano da API de Recorrência</a>.
+Para aderir um usuário a um plano em sua conta PagSeguro, chame a função **createSession()** da API, para criar uma nova sessão, seguida da **joinPlan(body)**, passando como parâmetro um JSON estruturado conforme o parâmetro Body em <a href="https://dev.pagseguro.uol.com.br/reference/api-recorrencia#ades%C3%A3o-ao-plano">Adesão ao Plano da API de Recorrência</a>.
 
 ### Possíveis parâmetros do Body:
 <table class="params">
@@ -398,7 +398,7 @@ Para aderir um usuário a um plano em sua conta PagSeguro, chame a função crea
 ---
 
 ## Cobrar Plano
-Para cobrar um plano em sua conta PagSeguro, chame a função chargePlan(body) da API, passando como parâmetro um JSON estruturado conforme o parâmetro Body em <a href="https://dev.pagseguro.uol.com.br/reference/api-recorrencia#cobrar-plano">Cobrar Plano da API de Recorrência</a>.
+Para cobrar um plano em sua conta PagSeguro, chame a função **chargePlan(body)** da API, passando como parâmetro um JSON estruturado conforme o parâmetro Body em <a href="https://dev.pagseguro.uol.com.br/reference/api-recorrencia#cobrar-plano">Cobrar Plano da API de Recorrência</a>.
 
 ### Possíveis parâmetros do Body:
 <table class="params">
@@ -486,7 +486,7 @@ Para cobrar um plano em sua conta PagSeguro, chame a função chargePlan(body) d
 ---
 
 ## Retentativa de pagamento
-Para realizar um novo pagamento de acordo com uma adesão a um plano em sua conta PagSeguro, chame a função paymentRetry(preApprovalCode, paymentOrderCode) da API, passando como parâmetros o preApprovalCode e o paymentOrderCode, conforme em <a href="https://dev.pagseguro.uol.com.br/reference/api-recorrencia#listar-ordens-de-pagamento-1">Retentativa de Pagamento da API de Recorrência</a>.
+Para realizar um novo pagamento de acordo com uma adesão a um plano em sua conta PagSeguro, chame a função **paymentRetry(preApprovalCode, paymentOrderCode)** da API, passando como parâmetros o preApprovalCode e o paymentOrderCode, conforme em <a href="https://dev.pagseguro.uol.com.br/reference/api-recorrencia#listar-ordens-de-pagamento-1">Retentativa de Pagamento da API de Recorrência</a>.
 
 ### Parâmetros
 <table class="params">

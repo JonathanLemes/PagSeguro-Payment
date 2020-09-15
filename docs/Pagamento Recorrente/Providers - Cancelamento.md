@@ -1,7 +1,7 @@
 # Providers - Cancelamento
 
 ## Suspensão e Reativação
-Para alterar o status da adesão a um plano em sua conta PagSeguro, chame a função suspendReactivate(preApproval, status) da API, passando como parâmetros o preApproval e o novo status, conforme em <a href="https://dev.pagseguro.uol.com.br/reference/api-recorrencia#suspens%C3%A3o-e-reativa%C3%A7%C3%A3o">Suspensão e Reativação da API de Recorrência</a>.
+Para alterar o status da adesão a um plano em sua conta PagSeguro, chame a função **suspendReactivate(preApproval, status)** da API, passando como parâmetros o preApproval e o novo status, conforme em <a href="https://dev.pagseguro.uol.com.br/reference/api-recorrencia#suspens%C3%A3o-e-reativa%C3%A7%C3%A3o">Suspensão e Reativação da API de Recorrência</a>.
 
 ### Parâmetros
 <table class="params">
@@ -33,7 +33,7 @@ Para alterar o status da adesão a um plano em sua conta PagSeguro, chame a fun�
 ---
 
 ## Cancelamento de adesão
-Para cancelar a adesão a um plano em sua conta PagSeguro, chame a função cancelAdherence(preApproval) da API, passando como parâmetro o preApproval, conforme em <a href="https://dev.pagseguro.uol.com.br/reference/api-recorrencia#cancelamento-de-ades%C3%A3o">Cancelamento de Adesão da API de Recorrência</a>.
+Para cancelar a adesão a um plano em sua conta PagSeguro, chame a função **cancelAdherence(preApproval)** da API, passando como parâmetro o preApproval, conforme em <a href="https://dev.pagseguro.uol.com.br/reference/api-recorrencia#cancelamento-de-ades%C3%A3o">Cancelamento de Adesão da API de Recorrência</a>.
 
 ### Parâmetros
 <table class="params">
