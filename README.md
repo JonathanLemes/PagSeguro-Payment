@@ -11,12 +11,9 @@ API implementada em JavaScript para o ambiente de pagamento recorrente disponibi
 
 ---
 
-## Execução
+## Documentação
 
 ### Credenciais
 
 Altere o arquivo **credentials.json** inserindo seu e-mail e token do PagSeguro em suas respectivas variáveis.
-**Caso você não saiba gerar um token, basta seguir o tutorial:**
-<html>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Taaa0H6j5Ug" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</html>
+**Caso você não saiba gerar um token, basta seguir o tutorial no link: ** https://www.youtube.com/watch?v=Taaa0H6j5Ug
