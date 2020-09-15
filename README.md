@@ -15,7 +15,7 @@ API implementada em JavaScript para o ambiente de pagamento recorrente disponibi
 
 Um exemplo básico de execução da API está no arquivo <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/index.js">index.js</a>.
 
-### Importações
+## Importações
 Importe os arquivos <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/src/API-PagSeguro.js">src/API-PagSeguro.js</a> e <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/credentials.json">credentials.json</a> para seu código JavaScript.
 ```html
 <script>
