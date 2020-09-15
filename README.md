@@ -34,7 +34,7 @@ npm install
 npm test
 ```
 
-## Importações
+# Importações
 Importe os arquivos <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/src/API-PagSeguro.js">src/API-PagSeguro.js</a> e <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/credentials.json">credentials.json</a> para seu código JavaScript.
 ```javascript
 const api = require("./src/API-PagSeguro");
@@ -46,7 +46,7 @@ O método construtor da API requer a passagem de um parâmetro JSON conforme o <
 ```javascript
 const API = new api(credentials);
 ```
-### Credenciais
+## Credenciais
 
 Altere o arquivo <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/credentials.json">credentials.json</a> inserindo seu e-mail e token do PagSeguro em suas respectivas variáveis.
 >**Nota:** As URLs do arquivo estão para o ambiente real, que pode ser alterado para o ambiente de testes (sandbox) inserindo ".sandbox" após o "ws" de todas as URLs.
