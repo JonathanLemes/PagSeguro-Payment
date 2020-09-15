@@ -13,7 +13,10 @@ API implementada em JavaScript para o ambiente de pagamento recorrente disponibi
 
 # Documentação
 
-Um exemplo básico de execução da API está no arquivo <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/index.js">index.js</a>. Para executá-lo, basta executar o comando:
+Um exemplo básico de execução da API está no arquivo <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/index.js">index.js</a>. Para executá-lo, basta executar os comandos:
+```bash
+npm install
+```
 ```bash
 npm start
 ```
