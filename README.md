@@ -18,7 +18,7 @@ Um exemplo básico de execução da API está no arquivo <a href="https://github
 npm install
 ```
 ```bash
-npm start
+npm test
 ```
 
 ## Importações
