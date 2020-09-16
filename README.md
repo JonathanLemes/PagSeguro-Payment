@@ -25,29 +25,35 @@ Biblioteca NPM implementada em JavaScript para o ambiente de pagamento recorrent
 ---
 
 # Importações
-Importe os arquivos <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/src/API-PagSeguro.js">src/API-PagSeguro.js</a> e <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/credentials.json">credentials.json</a> para seu código JavaScript.
+Instale a biblioteca <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/src/index.js">PagSeguro-Payment</a> e importe para seu projeto JavaScript.
 
 ```bash
-npm install pagseguro-payment
+npm i pagseguro-payment
 ```
 
 ```javascript
 const api = require("pagseguro-payment");
-const credentials = require("./credentials.json");
 ```
 
 ## Método construtor
-O método construtor da API requer a passagem de um parâmetro JSON conforme o <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/credentials.json">credentials.json</a>.
+O método construtor da API requer a passagem de um parâmetro JSON conforme o <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/credentials.json">credentials.json</a>. Os dados de sua conta PagSeguro devem ser inseridos em suas respectivas variáveis (*email* e *token*).
+As URLs do objeto *credentials* abaixo estão para o ambiente real, podendo ser alteradas para o ambiente de testes (sandbox) inserindo ".sandbox" após o "ws" de cada uma.
 ```javascript
+const credentials = {
+    "email": "",
+    "token": "",
+    "auth": "https://ws.pagseguro.uol.com.br/",
+    "preapprovals": "https://ws.pagseguro.uol.com.br/pre-approvals",
+    "preapprovals_request": "https://ws.pagseguro.uol.com.br/pre-approvals/request",
+    "preapprovals_payment": "https://ws.pagseguro.uol.com.br/pre-approvals/payment",
+    "recurring_payment": "https://ws.pagseguro.uol.com.br/recurring-payment",
+    "transactions": "https://ws.pagseguro.uol.com.br/v2/transactions",
+    "session":" https://ws.pagseguro.uol.com.br/v2/sessions/"
+}
 const API = new api(credentials);
 ```
-## Credenciais
-
-Altere o arquivo <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/credentials.json">credentials.json</a> inserindo seu e-mail e token do PagSeguro em suas respectivas variáveis.
->**Nota:** As URLs do arquivo estão para o ambiente real, que pode ser alterado para o ambiente de testes (sandbox) inserindo ".sandbox" após o "ws" de todas as URLs.
-
-Caso você não saiba gerar um token, basta seguir o tutorial no link: https://www.youtube.com/watch?v=Taaa0H6j5Ug
->Não se esqueça de manter seus dados sempre seguros.
+Caso você não saiba gerar um *token*, basta seguir o tutorial no link: https://www.youtube.com/watch?v=Taaa0H6j5Ug
+>Não se esqueça de manter seus dados sempre seguros!
 
 ---
 
