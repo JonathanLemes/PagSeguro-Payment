@@ -1,12 +1,11 @@
-# Biblioteca (lib) NPM PagSeguro-Payment
+# Biblioteca (lib) PagSeguro-Payment
 ![JavaScript](https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/languages/js.svg)
 ![NodeJS](https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/frameworks/nodejs.svg)
 ![NPM](https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/services/npm.svg)
 
 ## Descrição
 
-API implementada em JavaScript para o ambiente de pagamento recorrente disponibilizado pelo PagSeguro. Através das funções do arquivo <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/src/API-PagSeguro.js">src/API-PagSeguro.js</a> as requisições HTTP da <a href="https://dev.pagseguro.uol.com.br/reference/api-recorrencia">API Pagamento Recorrência</a> do PagSeguro são executadas.
->**Nota:** Seu projeto em Node JS deve possuir instaladas as bibliotecas <a href="https://www.npmjs.com/package/request">request</a> e <a href="https://www.npmjs.com/package/xml2js">xml2js</a> para o pleno funcionamento da API.
+Biblioteca NPM implementada em JavaScript para o ambiente de pagamento recorrente disponibilizado pelo PagSeguro. Através das funções do arquivo <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/index.js">src/API-PagSeguro.js</a> as requisições HTTP da <a href="https://dev.pagseguro.uol.com.br/reference/api-recorrencia">API Pagamento Recorrência</a> do PagSeguro são executadas.
 
 ---
 
@@ -46,7 +45,8 @@ const API = new api(credentials);
 
 Altere o arquivo <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/credentials.json">credentials.json</a> inserindo seu e-mail e token do PagSeguro em suas respectivas variáveis.
 >**Nota:** As URLs do arquivo estão para o ambiente real, que pode ser alterado para o ambiente de testes (sandbox) inserindo ".sandbox" após o "ws" de todas as URLs.
->Caso você não saiba gerar um token, basta seguir o tutorial no link: https://www.youtube.com/watch?v=Taaa0H6j5Ug
+Caso você não saiba gerar um token, basta seguir o tutorial no link: https://www.youtube.com/watch?v=Taaa0H6j5Ug
+>Não se esqueça de manter seus dados sempre seguros.
 
 ---
 

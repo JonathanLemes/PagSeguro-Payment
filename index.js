@@ -3,7 +3,7 @@ const parseString = require("xml2js").parseString;
 
 module.exports = class api_pagseguro {
     /**
-    * API para conexão com o servidor PagSeguro via JavaScript, baseada na API https://dev.pagseguro.uol.com.br/reference/api-recorrencia.
+    * Biblioteca NPM para conexão com o servidor PagSeguro via JavaScript, baseada na API https://dev.pagseguro.uol.com.br/reference/api-recorrencia.
     * @constructor
     * @param {string} email - Email de sua conta.
     * @param {string} token - Token de sua conta.

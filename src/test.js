@@ -1,4 +1,4 @@
-const api = require("..");
+const api = require("pagseguro-payment");
 const credentials = require("../credentials.json");
 
 const API = new api(credentials);
