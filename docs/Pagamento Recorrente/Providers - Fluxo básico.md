@@ -16,7 +16,7 @@ var body = {
     }
 }
 
-API.createPlan(body).then((res) => {
+pagseguroPayment.createPlan(body).then((res) => {
     console.log(res);
 });
 ```

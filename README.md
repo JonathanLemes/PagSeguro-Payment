@@ -32,7 +32,7 @@ npm i pagseguro-payment
 ```
 
 ```javascript
-const api = require("pagseguro-payment");
+const pagseguro_payment = require("pagseguro-payment");
 ```
 
 ## Método construtor
@@ -50,7 +50,7 @@ const credentials = {
     "transactions": "https://ws.pagseguro.uol.com.br/v2/transactions",
     "session":" https://ws.pagseguro.uol.com.br/v2/sessions/"
 }
-const API = new api(credentials);
+const pagseguroPayment = new pagseguro_payment(credentials);
 ```
 Caso você não saiba gerar um *token*, basta seguir o tutorial no link: https://www.youtube.com/watch?v=Taaa0H6j5Ug
 >Não se esqueça de manter seus dados sempre seguros!

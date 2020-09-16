@@ -1,7 +1,7 @@
-const api = require("pagseguro-payment");
+const pagseguro_payment = require("pagseguro-payment");
 const credentials = require("../credentials.json");
 
-const API = new api(credentials);
+const pagseguroPayment = new pagseguro_payment(credentials);
 
 var body = {
     reference: "1", 
@@ -16,6 +16,6 @@ var body = {
     }
 }
 
-API.createPlan(body).then((res) => {
+pagseguroPayment.createPlan(body).then((res) => {
     console.log(res);
 });
