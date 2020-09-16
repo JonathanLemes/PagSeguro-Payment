@@ -25,7 +25,7 @@ Biblioteca NPM implementada em JavaScript para o ambiente de pagamento recorrent
 ---
 
 # Importações
-Instale a biblioteca <a href="https://github.com/JonathanLemes/API-PagSeguro-JavaScript/blob/master/src/index.js">PagSeguro-Payment</a> e importe para seu projeto JavaScript.
+Instale a biblioteca <a href="https://www.npmjs.com/package/pagseguro-payment">PagSeguro-Payment</a> e importe para seu projeto JavaScript.
 
 ```bash
 npm i pagseguro-payment
